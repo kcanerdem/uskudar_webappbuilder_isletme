@@ -1,16 +1,16 @@
-# 📍 Location-Based Business Suitability Analysis App with ArcGIS Web AppBuilder
+# Location-Based Business Decision Support and Information App with ArcGIS Web AppBuilder
 
 As part of my internship at Üsküdar Municipality, I developed a WebGIS-based analysis and information application using ArcGIS Web AppBuilder. This application supports users who plan to open a business by enabling them to make data-driven decisions, and also helps existing business owners gain spatial insight into their surroundings.
 
 ---
 
-## 🎯 Purpose of the Application
+## Purpose of the Application
 
 The goal is to provide users with location-based insights by analyzing multi-layered data such as population demographics, competition, education levels, and spatial density — helping identify which type of business is more strategically and sustainably suitable in which location.
 
 ---
 
-## 🚀 Application Features
+## Application Features
 
 ### 1. Neighborhood Pop-up Analysis  
 Clicking on a neighborhood reveals dynamic information such as population density, dominant age groups, university graduation rates, and suggests suitable business types based on this data.
