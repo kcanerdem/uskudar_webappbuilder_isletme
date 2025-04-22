@@ -1,0 +1,26 @@
+var point = Geometry($feature)
+var buffer = Buffer(point, 1000)
+
+var rakipler = Filter(
+    FeatureSetByName($map, "Üsküdar Belediyesi İşyeri Yerleri"),
+    "anafaaliye = '" + $feature.anafaaliye + "'"
+)
+
+var yakindakiler = Intersects(rakipler, buffer)
+
+var türler = {}
+for (var f in yakindakiler) {
+    var a = f.anafaaliye  // ← doğru alan adı burada
+    if (HasKey(türler, a)) {
+        türler[a] += 1
+    } else {
+        türler[a] = 1
+    }
+}
+
+var sonuc = ""
+for (var k in türler) {
+    sonuc += k + ": " + türler[k] + TextFormatting.NewLine
+}
+
+return "📌 1 km çevresindeki benzer işletmeler:\n" + sonuc
