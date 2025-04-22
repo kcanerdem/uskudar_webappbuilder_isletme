@@ -1,0 +1,71 @@
+// Yaş grupları
+var c1 = $feature.nufus_0_14;
+var c2 = $feature.nufus_20_2;
+var c3 = $feature.nufus_25_4;
+var c4 = $feature.nufus_45_6;
+var c5 = $feature.nufus_65us;
+
+// Eğitim ve yoğunluk
+var egitim = $feature.egitimuni_;
+var yogunluk = Round($feature.nufusyog, 0);
+
+// Etiketli yaş grupları
+var yasGruplari = [
+  {"etiket": "Çocuk (0–14)", "deger": c1},
+  {"etiket": "Genç (15–24)", "deger": c2},
+  {"etiket": "Genç-Yetişkin (25–44)", "deger": c3},
+  {"etiket": "Orta Yaş (45–64)", "deger": c4},
+  {"etiket": "Yaşlı (65+)", "deger": c5}
+];
+
+// En yüksek ve ikinci en yüksek yaş grubunu bul
+var birinciEtiket = "";
+var ikinciEtiket = "";
+var birinciDeger = -1;
+var ikinciDeger = -1;
+
+for (var i in yasGruplari) {
+  var yas = yasGruplari[i];
+  if (yas.deger > birinciDeger) {
+    ikinciDeger = birinciDeger;
+    ikinciEtiket = birinciEtiket;
+    birinciDeger = yas.deger;
+    birinciEtiket = yas.etiket;
+  } else if (yas.deger > ikinciDeger) {
+    ikinciDeger = yas.deger;
+    ikinciEtiket = yas.etiket;
+  }
+}
+
+// Öneri matrisi (en baskın + ikinci baskın kombinasyonu)
+var oneriler = {
+  "Çocuk (0–14)|Genç (15–24)": "Kırtasiye, oyuncak, çocuk eğlence merkezleri.",
+  "Çocuk (0–14)|Genç-Yetişkin (25–44)": "Ebeveyn & çocuk odaklı marketler, aile restoranları.",
+  "Çocuk (0–14)|Orta Yaş (45–64)": "Sağlık, kreş, temel tüketim ürünleri.",
+  "Çocuk (0–14)|Yaşlı (65+)": "Aile destek hizmetleri, evde bakım ürünleri.",
+  
+  "Genç (15–24)|Genç-Yetişkin (25–44)": "Kafeler, teknoloji aksesuarları, spor salonları.",
+  "Genç (15–24)|Orta Yaş (45–64)": "Eğitim merkezleri, gençlik etkinlikleri, ulaşım.",
+  "Genç (15–24)|Yaşlı (65+)": "Karışık jenerasyonlara hitap eden sosyal alanlar.",
+  
+  "Genç-Yetişkin (25–44)|Orta Yaş (45–64)": "Gündelik yaşam, sağlık, temizlik ve hizmet sektörleri.",
+  "Genç-Yetişkin (25–44)|Yaşlı (65+)": "Medikal market, ev destek ürünleri, bakım hizmetleri.",
+  
+  "Orta Yaş (45–64)|Yaşlı (65+)": "Sağlık, eczane, temizlik, medikal destek hizmetleri."
+};
+// Kombinasyonu üret
+var kombinasyon = birinciEtiket + "|" + ikinciEtiket;
+var onerilen = "";
+
+if (HasKey(oneriler, kombinasyon)) {
+  onerilen = oneriler[kombinasyon];
+} else {
+  onerilen = "Genel hizmet, market ve ulaşım sektörleri için değerlendirilebilir.";
+}
+
+// Çıktı
+return "👥 1. Baskın yaş grubu: " + birinciEtiket + "\n" +
+       "👥 2. Baskın yaş grubu: " + ikinciEtiket + "\n" +
+       "🎓 Üniversite eğitim oranı: %" + Round(egitim, 1) + "\n" +
+       "📊 Nüfus yoğunluğu: " + yogunluk + " kişi/km²\n" +
+       "💡 Öneri: " + onerilen;
