@@ -75,17 +75,17 @@ Bu uygulamada kullanılan veriler, Üsküdar Belediyesi tarafından sağlanan ve
 
 -Genel harita & basemaps
 ![Genel harita & basemaps](screenshots/1.genel_harita.png)
-
+-Mahalle popup
 ![Mahalle popup](screenshots/2.mahalle_popup.png) 
-
+-Filtre aracı
 ![Filtre aracı](screenshots/3.filtre.png) 
-
+-Sorgu Aracı
 ![Sorgu Aracı](screenshots/4.sorgu.png) 
-
+-Near me aracı
 ![Near me aracı](screenshots/5.nearme.png) 
-
+-Bilgi Grafiği
 ![Bilgi Grafiği](screenshots/6.grafik.png) 
-
+-İşletme Popup
 ![İşletme Popup](screenshots/7.popup_isletme.png) 
 
 ---
