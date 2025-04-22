@@ -71,9 +71,9 @@ Bu uygulamada kullanılan veriler, Üsküdar Belediyesi tarafından sağlanan ve
 
 ## Uygulama Ekran Görüntüleri
 
-> Görseller `images/` klasörü altına yüklenmiştir:
+> Görseller `screenshots/` klasörü altına yüklenmiştir:
 
-
+-Genel harita & basemaps
 ![Genel harita & basemaps](screenshots/1.genel_harita.png)
 
 ![Mahalle popup](screenshots/2.mahalle_popup.png) 
