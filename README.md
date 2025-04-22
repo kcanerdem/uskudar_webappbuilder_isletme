@@ -1,4 +1,4 @@
-# ArcGIS Web AppBuilder ile Lokasyon Tabanlı İşletme Açılabilirlik Analizi Uygulaması
+# ArcGIS Web AppBuilder ile Mekânsal İşletme Karar Destek ve Bilgilendirme Uygulaması
 
 Üsküdar Belediyesi'nde yaptığım staj kapsamında ArcGIS Web AppBuilder kullanarak; hem işletme açmayı planlayan kullanıcıların veriye dayalı kararlar alabilmesini, hem de mevcut işletme sahiplerinin mekansal verilere göre bilgi edinmesini sağlayan bir WebGIS tabanlı analiz ve bilgilendirme uygulaması geliştirdim.
 
