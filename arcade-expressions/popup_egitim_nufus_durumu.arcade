@@ -1,0 +1,56 @@
+// Eğitim oranı
+var egitim = $feature.egitimuni_;
+var egitimSeviye = "";
+
+if (egitim > 25) {
+  egitimSeviye = "yüksek";
+} else if (egitim > 15) {
+  egitimSeviye = "orta";
+} else {
+  egitimSeviye = "düşük";
+}
+
+// Nüfus yoğunluğu
+var yogunluk = $feature.nufusyog;
+var yogSeviye = "";
+
+if (yogunluk > 20000) {
+  yogSeviye = "yüksek";
+} else if (yogunluk > 10000) {
+  yogSeviye = "orta";
+} else {
+  yogSeviye = "düşük";
+}
+
+// Duruma göre bilgi
+var yorum = "";
+
+if (yogSeviye == "yüksek") {
+  if (egitimSeviye == "yüksek") {
+    yorum = "Bu mahallede nüfus yoğunluğu fazla ve üniversite eğitim oranı da yüksek.";
+  } else if (egitimSeviye == "orta") {
+    yorum = "Bu mahallede nüfus yoğunluğu fazla fakat üniversite eğitim oranı orta seviyededir.";
+  } else {
+    yorum = "Bu mahallede nüfus yoğunluğu fazla fakat üniversite eğitim oranı düşüktür.";
+  }
+} else if (yogSeviye == "orta") {
+  if (egitimSeviye == "yüksek") {
+    yorum = "Bu mahallede nüfus yoğunluğu orta seviyede ve üniversite eğitim oranı yüksektir.";
+  } else if (egitimSeviye == "orta") {
+    yorum = "Bu mahallede hem nüfus yoğunluğu hem de üniversite eğitim oranı orta seviyededir.";
+  } else {
+    yorum = "Bu mahallede nüfus yoğunluğu orta fakat üniversite eğitim oranı düşüktür.";
+  }
+} else {
+  if (egitimSeviye == "yüksek") {
+    yorum = "Bu mahallede nüfus yoğunluğu düşük fakat üniversite eğitim oranı yüksektir.";
+  } else if (egitimSeviye == "orta") {
+    yorum = "Bu mahallede nüfus yoğunluğu düşük ve üniversite eğitim oranı orta seviyededir.";
+  } else {
+    yorum = "Bu mahallede hem nüfus yoğunluğu hem de üniversite eğitim oranı düşüktür.";
+  }
+}
+
+// sonuç
+return yorum;
+
